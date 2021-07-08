@@ -1,28 +1,26 @@
 version: "3.9"
 
 services:
-#  rasa-api:
-#    image: rasa/rasa:2.7.0-full
-#    command: run --enable-api --cors "*"
-#    links:
-#      - rasa-actions:rasa
-#    ports:
-#    - 5005:5005
-#    volumes:
-#    - "./educational-chatbot-HW:/app"
-#
-#  rasa-actions:
-#    image: rasa/rasa:2.7.0-full
-#    command: run actions
-#    ports:
-#      - 5055:5055
-#    volumes:
-#      - "./educational-chatbot-HW:/app"
+  rasa-api:
+    image: rasa/rasa:2.7.0-full
+    command: run --enable-api --cors "*"
+    links:
+      - rasa-actions:rasa
+    ports:
+    - 5005:5005
+    volumes:
+    - "./educational-chatbot-HW:/app"
+
+  rasa-actions:
+    image: rasa/rasa:2.7.0-full
+    command: run actions
+    ports:
+      - 5055:5055
+    volumes:
+      - "./educational-chatbot-HW:/app"
 
   front:
     build:
       context: ./front_educational_chatbot_HW
-      args:
-        RASA_ADDRESS: http://bullshit:5005
     ports:
       - 8081:80
