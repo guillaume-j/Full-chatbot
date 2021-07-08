@@ -1,0 +1,4 @@
+[submodule "front_educational_chatbot_HW"]
+	path = front_educational_chatbot_HW
+	url = git@github.com:guillaume-j/front_educational_chatbot_HW.git
+	branch = main
