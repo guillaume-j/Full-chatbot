@@ -1,6 +1,6 @@
 # how to do
 
 ````
-git pull --recurse-submodules
+git clone REPO --recursive
 docker compose up --build
 ````
